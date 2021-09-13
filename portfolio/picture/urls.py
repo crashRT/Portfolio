@@ -1,7 +1,6 @@
-from django.contrib import admin
 from django.urls import path
-
+from .views import PictureList
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('list/', PictureList.as_view()),
 ]
