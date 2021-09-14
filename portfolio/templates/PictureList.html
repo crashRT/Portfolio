@@ -5,13 +5,19 @@
 
 {% block content %}
 
+<div class="PictureListContainer">
     {% for item in object_list %}  <!--model : PictureModel -->
-        <a href="{% url 'PictureDetail' item.pk %}">
+            {% if item.picture1 %}
             <div class="ListBlock">
-                <h1>{{ item.title }}</h1>
-                <img src = "..{{ item.picture1.url }}" width="540">
+                <a href="{% url 'PictureDetail' item.pk %}">
+                    <!-- <h1>{{ item.title }}</h1> -->
+
+                    <img src = "..{{ item.picture1.url }}" width="100%">
+                </a>
             </div>
-        </a>
+            {% endif %}
+
     {% endfor %}
+</div>
 
 {% endblock content %}
