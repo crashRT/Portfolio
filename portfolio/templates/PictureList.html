@@ -1,6 +1,17 @@
-{% for item in object_list %}  <!--model : PictureModel -->
-    <div>
-        <h1>{{ item.title }}</h1>
-        <img src = "..{{ item.picture1.url }}" width="540">
-    </div>
-{% endfor %}
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+    {% for item in object_list %}  <!--model : PictureModel -->
+        <a href="{% url 'PictureDetail' item.pk %}">
+            <div class="ListBlock">
+                <h1>{{ item.title }}</h1>
+                <img src = "..{{ item.picture1.url }}" width="540">
+            </div>
+        </a>
+    {% endfor %}
+
+{% endblock content %}

@@ -1,34 +1,43 @@
-<style>
-    img {
-        width: 200px;
-    }
-</style>
+{% extends 'base.html' %}
 
-<h1>{{ object.title }}</h1>
+{% block header %}
+{% endblock header %}
 
-{% if object.picture1 %}
-    <img src = "../..{{ object.picture1.url }}">
-{% endif %}
+{% block content %}
 
-{% if object.picture2 %}
-    <img src = "../..{{ object.picture2.url }}">
-{% endif %}
+    <h1>{{ object.title }}</h1>
 
-{% if object.picture3 %}
-    <img src = "../..{{ object.picture3.url }}">
-{% endif %}
+    {% if object.picture1 %}
+        <img src = "../..{{ object.picture1.url }}" class="DetailPicture">
+    {% endif %}
 
-{% if object.picture4 %}
-    <img src = "../..{{ object.picture4.url }}">
-{% endif %}
+    {% if object.picture2 %}
+        <img src = "../..{{ object.picture2.url }}" class="DetailPicture">
+    {% endif %}
 
-{% if object.picture5 %}
-    <img src = "../..{{ object.picture5.url }}">
-{% endif %}
+    {% if object.picture3 %}
+        <img src = "../..{{ object.picture3.url }}" class="DetailPicture">
+    {% endif %}
 
-{% if object.picture6 %}
-    <img src = "../..{{ object.picture6.url }}">
-{% endif %}
+    {% if object.picture4 %}
+        <img src = "../..{{ object.picture4.url }}" class="DetailPicture">
+    {% endif %}
+
+    {% if object.picture5 %}
+        <img src = "../..{{ object.picture5.url }}" class="DetailPicture">
+    {% endif %}
+
+    {% if object.picture6 %}
+        <img src = "../..{{ object.picture6.url }}" class="DetailPicture">
+    {% endif %}
 
 
-<p>{{ object.discription }}</p>
+    <p>{{ object.discription }}</p>
+
+    <a href="{% url 'PictureList' %}">
+        <div class = 'return'>
+            <p>一覧へ</p>
+        </div>
+    </a>
+
+{% endblock content %}
