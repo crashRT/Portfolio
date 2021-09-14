@@ -1,0 +1,5 @@
+{% for item in object_list %}  <!--model : PictureModel -->
+    <h1>{{ item.title }}</h1>
+    <img src = "{{ item.picture.url }}">
+    <p>{{ item.discription}}</p>
+{% endfor %}
