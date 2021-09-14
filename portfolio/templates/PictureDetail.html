@@ -1,5 +1,34 @@
+<style>
+    img {
+        width: 200px;
+    }
+</style>
+
 <h1>{{ object.title }}</h1>
 
-<img src = "../..{{ object.picture.url }}">
+{% if object.picture1 %}
+    <img src = "../..{{ object.picture1.url }}">
+{% endif %}
+
+{% if object.picture2 %}
+    <img src = "../..{{ object.picture2.url }}">
+{% endif %}
+
+{% if object.picture3 %}
+    <img src = "../..{{ object.picture3.url }}">
+{% endif %}
+
+{% if object.picture4 %}
+    <img src = "../..{{ object.picture4.url }}">
+{% endif %}
+
+{% if object.picture5 %}
+    <img src = "../..{{ object.picture5.url }}">
+{% endif %}
+
+{% if object.picture6 %}
+    <img src = "../..{{ object.picture6.url }}">
+{% endif %}
+
 
 <p>{{ object.discription }}</p>
