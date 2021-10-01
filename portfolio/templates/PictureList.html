@@ -12,7 +12,7 @@
                 <a href="{% url 'PictureDetail' item.pk %}">
                     <!-- <h1>{{ item.title }}</h1> -->
 
-                    <img src = "..{{ item.picture1.url }}" width="100%">
+                    <img src = "{{ item.picture1.url }}" width="100%">
                 </a>
             </div>
             {% endif %}
