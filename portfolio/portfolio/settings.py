@@ -3,10 +3,31 @@ import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-print(BASE_DIR)
+
+# Static files (CSS, JavaScript, Images)
+# https://docs.djangoproject.com/en/3.2/howto/static-files/
+
 MEDIA_ROOT = BASE_DIR.joinpath('media')
-print(MEDIA_ROOT)
 MEDIA_URL = '/media/'
+DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static'),
+]
+STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
+
+GS_BUCKET_NAME = 'crashrt_portfolio_bucket'
+
+from google.oauth2 import service_account
+from google.cloud import storage
+
+storage_client = storage.Client.from_service_account_json('path_to_service_account_key.json')
+
+S_CREDENTIALS = service_account.Credentials.from_service_account_file(
+    os.path.join(BASE_DIR, 'portfoliotest-326221-06d04910b714.json'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
@@ -17,7 +38,7 @@ SECRET_KEY = 'django-insecure-5wjv954!y75!!@(@8hc!pp_6#@2du8by-tgqo746pu&dtvng^=
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-ALLOWED_HOSTS = ['https://portfoliotest-326221.an.r.appspot.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 #DEBUG = False
 #ALLOWED_HOSTS = ['*']
@@ -69,12 +90,56 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+
+
+#if文でできるかテスト
+
+if os.getenv('GAE_APPLICATION', None):
+    # GAE本番環境
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': '/cloudsql/portfoliotest-326221:us-central1:portfolio-db-instance',
+            'USER': 'crashRT',
+            'PASSWORD': 'Natorica340',
+            'NAME': 'PortfolioDB',
+        }
     }
-}
+else:
+    # 開発環境
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'HOST': 'localhost',
+            'PORT': '3306',
+            'USER': 'crashRT',
+            'PASSWORD': 'Natorica340',
+            'NAME': 'PortfolioDB',
+        }
+    }
+
+
+#開発環境
+# 事前に./cloud_sql_proxyを実行してプロキシ経由でアクセスできるようにする必要がある。
+#     DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+#}
+
+#DATABASES = {
+#        'default': {
+##            'ENGINE': 'django.db.backends.mysql',
+#            'HOST': '127.0.0.1',
+##            'PORT': '3306',
+#            'USER': '[YOUR-USERNAME]',
+#            'PASSWORD': '[YOUR-PASSWORD]',
+#            'NAME': '[YOUR-DATABASE]',
+#        }
+#    }
+
+
 
 
 # Password validation
@@ -110,15 +175,8 @@ USE_L10N = True
 USE_TZ = True
 
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
-#STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static'),
-]
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
