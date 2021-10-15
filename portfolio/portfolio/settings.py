@@ -1,44 +1,38 @@
 from pathlib import Path
 import os
+import environ
+
+
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
+
+env = environ.Env()
+env.read_env(os.path.join(BASE_DIR, '.env'))
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 MEDIA_ROOT = BASE_DIR.joinpath('media')
 MEDIA_URL = '/media/'
-DEFAULT_FILE_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static'),
 ]
-STATICFILES_STORAGE = 'storages.backends.gcloud.GoogleCloudStorage'
 
-GS_BUCKET_NAME = 'crashrt_portfolio_bucket'
-
-from google.oauth2 import service_account
-from google.cloud import storage
-
-storage_client = storage.Client.from_service_account_json('path_to_service_account_key.json')
-
-S_CREDENTIALS = service_account.Credentials.from_service_account_file(
-    os.path.join(BASE_DIR, 'portfoliotest-326221-06d04910b714.json'),
-)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-5wjv954!y75!!@(@8hc!pp_6#@2du8by-tgqo746pu&dtvng^='
+SECRET_KEY = env('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = True
-ALLOWED_HOSTS = ['*']
+DEBUG = False
+ALLOWED_HOSTS = ['portfoliotest-326221.an.r.appspot.com', 'localhost']
 
 #DEBUG = False
 #ALLOWED_HOSTS = ['*']
@@ -92,31 +86,18 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 
 
 
-#if文でできるかテスト
 
-if os.getenv('GAE_APPLICATION', None):
-    # GAE本番環境
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': '/cloudsql/portfoliotest-326221:us-central1:portfolio-db-instance',
-            'USER': 'crashRT',
-            'PASSWORD': 'Natorica340',
-            'NAME': 'PortfolioDB',
-        }
+# GAE本番環境
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '/cloudsql/{}'.format(env('DB_HOST')),
+        'USER': env('DB_USER'),
+        'PASSWORD': env('DB_PASSWORD'),
+        'NAME': env('DB_NAME'),
     }
-else:
-    # 開発環境
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'HOST': 'localhost',
-            'PORT': '3306',
-            'USER': 'crashRT',
-            'PASSWORD': 'Natorica340',
-            'NAME': 'PortfolioDB',
-        }
-    }
+}
+
 
 
 #開発環境
@@ -159,7 +140,6 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
-
 
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
