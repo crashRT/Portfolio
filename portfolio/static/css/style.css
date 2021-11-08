@@ -1,12 +1,32 @@
+/*-----------  構造  -----------
+あとでレスポンシブに変更する必要あり*/
+.PageBody{
+    width: 100%;
+}
+.PageBodyMain{
+    width: 80%;
+    background-color: lightseagreen;
+    float:right
+}
+
+.PageBodySub{
+    width: 20%;
+    text-align: center;
+    background-color: lightblue;
+    float: left;
+}
+
 /*-----------  List  -----------*/
 
 .ListBlock{
     width:100%;
 }
-
-.PictureListContainer{
-    width: 100%;
+.PageTitle{
+    font-size: 30px;
+    text-align: center;
 }
+
+
 
 @media screen and (min-width: 481px) {
     .ListBlock{
@@ -19,7 +39,7 @@
 }
 }
 
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 1081px) {
     .ListBlock{
         width: 33.33%;
     }
@@ -35,4 +55,9 @@
 .DetailPicture{
     width:90%;
     margin: 1% 5%;
+}
+
+/*----------   Navigation  -----------*/
+.PageNavi{
+    font-size: 20px;
 }
