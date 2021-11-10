@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block header %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}" type="text/css">
+{% endblock header %}
+
+{% block content %}
+<div class="PageBodySub">
+    <section class="PageNavi">
+        <img src="../../media/logo/crashrt_alpha.png" width=100%>
+        <a href="{% url 'Top' %}">
+            <p>TOP</p>
+        </a>
+        <a href="{% url 'MovieList' %}">
+            <p>MOVIE</p>
+        </a>
+        <a href="{% url 'PictureList' %}">
+            <p>PICTURE</p>
+        </a>
+        <a href="{% url 'ModelingList' %}">
+            <p>3D Modeling</p>
+        </a>
+        <a href="{% url 'NoteList' %}">
+            <p>NOTE</p>
+        </a>
+        <p class="PageNaviNow">ABOUT</p>
+        <p>CONTACT</p>
+    </section>
+</div>
+
+<div class="PageBodyMain">
+    <h1 class="PageTitle">About</h1>
+    <div class="Icon clearfix">
+        <img src="{{ BASE_DIR }}/media/logo/crashRT.jpg">
+    </div>
+
+    <div class="Discription clearfix">
+
+        <h2 class="Name">
+            crashRT
+        </h2>
+        <p class="profile">
+            MotionGraphics / 3DCG<br>
+            <a href="https://www.kmc.gr.jp/">京大マイコンクラブ(KMC)</a> 第45代部員
+        </p>
+        <p class="pr">
+            普段は「かっこいい」作風をメインとして，自分が好きになれるものを制作しています．<br>
+            2018年頃から映像制作をしています．
+        </p>
+        <p class="Mail">Mail: crashrt1121@gmail.com</p>
+        <div class="Links">
+            <h3>Links</h3>
+
+            <p class="LinkUrl"><a href="https://twitter.com/crashRT_doyo">Twitter</a></p>
+
+            <p class="LinkUrl"><a href="https://www.instagram.com/crashrt1121/">Instagram</a></p>
+
+            <p class="LinkUrl"><a href="https://www.youtube.com/channel/UCN5nx_Ef6UaVQWy5SrFfTOw">Youtube</a></p>
+
+        </div>
+
+        <h3>使用ソフト</h3>
+        <ur>
+            <li>AfterEffects</li>
+            <li>Illustrator</li>
+            <li>Blender</li>
+            <li>cinema4D</li>
+        </ur>
+    </div>
+</div>
+
+{% endblock content %}

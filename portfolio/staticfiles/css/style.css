@@ -1,32 +1,73 @@
+/*-----------  構造  -----------
+あとでレスポンシブに変更する必要あり*/
+.PageBody{
+    width: 100%;
+    font-family: jaf-bernina-sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+.PageBodyMain{
+    width: 85%;
+    float:right;
+}
+
+.PageBodySub{
+    width: 15%;
+    text-align: center;
+    float: left;
+    border-right: solid #909090 2px;
+    margin-right:5px;
+    position: fixed;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom:0px;
+}
+
+.PageBodySub:after{
+    content:"";
+    clear: both;
+    display: block;
+}
+
 /*-----------  List  -----------*/
 
 .ListBlock{
     width:100%;
+    margin: 2px;
+
+}
+.PageTitle{
+    font-size: 30px;
+    text-align: center;
+    font-family: jaf-bernina-sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.PictureListContainer{
-    width: 100%;
-}
+
 
 @media screen and (min-width: 481px) {
     .ListBlock{
-        width:50%;
+        width:44%;
     }
     .PictureListContainer{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        margin-left: 15px;
 }
 }
 
-@media screen and (min-width: 961px) {
+@media screen and (min-width: 1081px) {
     .ListBlock{
-        width: 33.33%;
+        width: 32%;
     }
     .PictureListContainer{
         width: 100%;
         display: flex;
         flex-wrap: wrap;
+        margin-left: 15px;
 }
 }
 
@@ -35,4 +76,14 @@
 .DetailPicture{
     width:90%;
     margin: 1% 5%;
+}
+
+/*----------   Navigation  -----------*/
+.PageNavi{
+    font-size: 20px;
+}
+
+.PageNaviNow{
+    border-bottom: solid 1px black;
+    margin: 0% 30%;
 }

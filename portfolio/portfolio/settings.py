@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     'movie.apps.MovieConfig',
     'modeling.apps.ModelingConfig',
     'note.apps.NoteConfig',
-    #'others.apps.OthersConfig',
+    'others.apps.OthersConfig',
 ]
 
 MIDDLEWARE = [

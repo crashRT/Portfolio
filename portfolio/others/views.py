@@ -1,9 +1,12 @@
 from django.shortcuts import render
-from django.views.generic import DetailView
+from django.views.generic import ListView
+from note.models import NoteModel
 
 # Create your views here.
-class About(DetailView):
+class About(ListView):
     template_name = 'About.html'
+    model = NoteModel
 
-class Contact(DetailView):
+class Contact(ListView):
     template_name = 'Contact.html'
+    model = NoteModel
