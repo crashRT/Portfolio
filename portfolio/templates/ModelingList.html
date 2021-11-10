@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+<!--リンク部分-->
+<div class="PageBody">
+    <div class="PageBodySub">
+        <section class="PageNavi">
+            <img src = "../../media/logo/crashrt_alpha.png" width = 100%>
+            <p>TOP</p>
+            <p>MOVIE</p>
+            <p>PICTURE</p>
+            <p class="PageNaviNow">3D Modeling</p>
+            <p>NOTE</p>
+            <p>ABOUT</p>
+            <p>CONTACT</p>
+        </section>
+    </div>
+
+    <!--画像リスト部分-->
+    <div class="PageBodyMain">
+        <h1 class="PageTitle">3D Modeling</h1>
+        <section class="PictureListContainer">
+            {% for item in object_list reversed %}  <!--model : ModelingModel -->
+                    {% if item.picture1 %}
+                    <div class="ListBlock">
+                        <a href="{% url 'ModelingDetail' item.pk %}">
+                            <img src = "../../media/modeling/thumbnail/{{ item.picture1 }}.jpg" width="100%">
+                        </a>
+                    </div>
+                    {% endif %}
+
+            {% endfor %}
+        </section>
+    </div>
+</div>
+
+{% endblock content %}

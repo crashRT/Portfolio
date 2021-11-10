@@ -12,7 +12,7 @@
             <img src = "../../media/logo/crashrt_alpha.png" width = 100%>
             <p>TOP</p>
             <p>MOVIE</p>
-            <p>PICTURE</p>
+            <p class="PageNaviNow">PICTURE</p>
             <p>3D Modeling</p>
             <p>NOTE</p>
             <p>ABOUT</p>
@@ -24,7 +24,7 @@
     <div class="PageBodyMain">
         <h1 class="PageTitle">Piture</h1>
         <section class="PictureListContainer">
-            {% for item in object_list %}  <!--model : PictureModel -->
+            {% for item in object_list reversed %}  <!--model : PictureModel -->
                     {% if item.picture1 %}
                     <div class="ListBlock">
                         <a href="{% url 'PictureDetail' item.pk %}">

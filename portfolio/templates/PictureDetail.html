@@ -32,7 +32,7 @@
     {% endif %}
 
 
-    <p>{{ object.discription }}</p>
+    <p>{{ object.discription |safe}}</p>
 
     <a href="{% url 'PictureList' %}">
         <div class = 'return'>
