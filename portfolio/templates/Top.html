@@ -10,8 +10,8 @@
     <div class="PageBodySub">
         <section class="PageNavi">
             <img src = "../../media/logo/crashrt_alpha.png" width = 100%>
-            <a href="{% url 'Top' %}"><p>TOP</p></a>
-            <p class="PageNaviNow">MOVIE</p>
+            <p class="PageNaviNow">TOP</p>
+            <a href="{% url 'MovieList' %}"><p>MOVIE</p></a>
             <a href="{% url 'PictureList' %}"><p>PICTURE</p></a>
             <a href="{% url 'ModelingList' %}"><p>3D Modeling</p></a>
             <a href="{% url 'NoteList' %}"><p>NOTE</p></a>
@@ -22,9 +22,9 @@
 
     <!--画像リスト部分-->
     <div class="PageBodyMain">
-        <h1 class="PageTitle">MOVIE</h1>
+        <h1 class="PageTitle">crashRT Portfolio</h1>
         <section class="PictureListContainer">
-            {% for item in object_list reversed %}  <!--model : PictureModel -->
+            {% for item in object_list reversed %}  <!--model : MovieModel -->
                     {% if item.thumbnail %}
                     <div class="ListBlock">
                         <a href="{% url 'MovieDetail' item.pk %}">
@@ -33,6 +33,20 @@
                             <img class="lazyload"
                             src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
                             data-src = "../../media/movie/thumbnail/{{ item.thumbnail }}.jpg" width="100%">
+                        </a>
+                    </div>
+                    {% endif %}
+
+            {% endfor %}
+            {% for item in object_list2 reversed %}  <!--model : PictureModel -->
+                    {% if item.picture1 %}
+                    <div class="ListBlock">
+                        <a href="{% url 'PictureDetail' item.pk %}">
+
+                            <img class="lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+                            data-src = "../../media/picture/thumbnail/{{ item.picture1 }}.jpg"
+                            width="100%" alt="{{ item.title }}">
                         </a>
                     </div>
                     {% endif %}

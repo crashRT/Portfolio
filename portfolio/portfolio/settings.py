@@ -47,7 +47,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    #'top.apps.TopConfig',
+    'top.apps.TopConfig',
     'picture.apps.PictureConfig',
     'movie.apps.MovieConfig',
     'modeling.apps.ModelingConfig',
