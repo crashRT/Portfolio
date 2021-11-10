@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+    <h1>{{ object.title }}</h1>
+
+    <h3>{{ object.abstract }}</h3>
+
+
+    <div class="NoteMain">{{ object.note |safe}}</div>
+
+    <a href="{% url 'NoteList' %}">
+        <div class = 'return'>
+            <p>一覧へ</p>
+        </div>
+    </a>
+
+{% endblock content %}

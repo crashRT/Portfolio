@@ -12,9 +12,9 @@
             <img src = "../../media/logo/crashrt_alpha.png" width = 100%>
             <p>TOP</p>
             <p class="PageNaviNow">MOVIE</p>
-            <p>PICTURE</p>
-            <p>3D Modeling</p>
-            <p>NOTE</p>
+            <a href="{% url 'PictureList' %}"><p>PICTURE</p></a>
+            <a href="{% url 'ModelingList' %}"><p>3D Modeling</p></a>
+            <a href="{% url 'NoteList' %}"><p>NOTE</p></a>
             <p>ABOUT</p>
             <p>CONTACT</p>
         </section>
@@ -25,12 +25,14 @@
         <h1 class="PageTitle">MOVIE</h1>
         <section class="PictureListContainer">
             {% for item in object_list reversed %}  <!--model : PictureModel -->
-                    {% if item.picture1 %}
+                    {% if item.thumbnail %}
                     <div class="ListBlock">
                         <a href="{% url 'MovieDetail' item.pk %}">
                             <!-- <h1>{{ item.title }}</h1> -->
 
-                            <img src = "../../media/movie/thumbnail/{{ item.thumbnail }}.jpg" width="100%">
+                            <img class="lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+                            data-src = "../../media/movie/thumbnail/{{ item.thumbnail }}.jpg" width="100%">
                         </a>
                     </div>
                     {% endif %}

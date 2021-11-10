@@ -11,10 +11,10 @@
         <section class="PageNavi">
             <img src = "../../media/logo/crashrt_alpha.png" width = 100%>
             <p>TOP</p>
-            <p>MOVIE</p>
-            <p>PICTURE</p>
+            <a href="{% url 'MovieList' %}"><p>MOVIE</p></a>
+            <a href="{% url 'PictureList' %}"><p>PICTURE</p></a>
             <p class="PageNaviNow">3D Modeling</p>
-            <p>NOTE</p>
+            <a href="{% url 'NoteList' %}"><p>NOTE</p></a>
             <p>ABOUT</p>
             <p>CONTACT</p>
         </section>
@@ -28,7 +28,9 @@
                     {% if item.picture1 %}
                     <div class="ListBlock">
                         <a href="{% url 'ModelingDetail' item.pk %}">
-                            <img src = "../../media/modeling/thumbnail/{{ item.picture1 }}.jpg" width="100%">
+                            <img class="lazyload"
+                            src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+                            data-src = "../../media/modeling/thumbnail/{{ item.picture1 }}.jpg" width="100%">
                         </a>
                     </div>
                     {% endif %}

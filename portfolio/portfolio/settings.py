@@ -51,7 +51,7 @@ INSTALLED_APPS = [
     'picture.apps.PictureConfig',
     'movie.apps.MovieConfig',
     'modeling.apps.ModelingConfig',
-    #'note.apps.NoteConfig',
+    'note.apps.NoteConfig',
     #'others.apps.OthersConfig',
 ]
 
