@@ -9,14 +9,26 @@
 <div class="PageBody">
     <div class="PageBodySub">
         <section class="PageNavi">
-            <img src = "../../media/logo/crashrt_alpha.png" width = 100%>
-            <a href="{% url 'Top' %}"><p>TOP</p></a>
-            <a href="{% url 'MovieList' %}"><p>MOVIE</p></a>
-            <a href="{% url 'PictureList' %}"><p>PICTURE</p></a>
+            <img src="../../media/logo/crashrt_alpha.png" width=100%>
+            <a href="{% url 'Top' %}">
+                <p class="NaviLink">TOP</p>
+            </a>
+            <a href="{% url 'MovieList' %}">
+                <p class="NaviLink">MOVIE</p>
+            </a>
+            <a href="{% url 'PictureList' %}">
+                <p class="NaviLink">PICTURE</p>
+            </a>
             <p class="PageNaviNow">3D Modeling</p>
-            <a href="{% url 'NoteList' %}"><p>NOTE</p></a>
-            <a href="{% url 'About' %}"><p>ABOUT</p></a>
-            <p>CONTACT</p>
+            <a href="{% url 'NoteList' %}">
+                <p class="NaviLink">NOTE</p>
+            </a>
+            <a href="{% url 'About' %}">
+                <p class="NaviLink">ABOUT</p>
+            </a>
+            <a href="{% url 'Contact' %}">
+                <p class="NaviLink">CONTACT</p>
+            </a>
         </section>
     </div>
 
@@ -24,16 +36,17 @@
     <div class="PageBodyMain">
         <h1 class="PageTitle">3D Modeling</h1>
         <section class="PictureListContainer">
-            {% for item in object_list reversed %}  <!--model : ModelingModel -->
-                    {% if item.picture1 %}
-                    <div class="ListBlock">
-                        <a href="{% url 'ModelingDetail' item.pk %}">
-                            <img class="lazyload"
-                            src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
-                            data-src = "../../media/modeling/thumbnail/{{ item.picture1 }}.jpg" width="100%">
-                        </a>
-                    </div>
-                    {% endif %}
+            {% for item in object_list reversed %}
+            <!--model : ModelingModel -->
+            {% if item.picture1 %}
+            <div class="ListBlock">
+                <a href="{% url 'ModelingDetail' item.pk %}">
+                    <img class="lazyload"
+                        src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+                        data-src="../../media/modeling/thumbnail/{{ item.picture1 }}.jpg" width="100%">
+                </a>
+            </div>
+            {% endif %}
 
             {% endfor %}
         </section>

@@ -1,3 +1,19 @@
+
+*{
+    color: #11131D;
+    background-color: #F7F8FF;
+}
+
+a:hover{
+    color: #13162b;
+    text-decoration: none;
+}
+
+a{
+    color: #3f53b3;
+    text-decoration: none;
+}
+
 /*-----------  構造  -----------
 あとでレスポンシブに変更する必要あり*/
 .PageBody{
@@ -14,6 +30,9 @@
 .PageBodySub{
     width: 15%;
     text-align: center;
+    font-family: jaf-bernina-sans, sans-serif;
+    font-weight: 400;
+    font-style: normal;
     float: left;
     border-right: solid #909090 2px;
     margin-right:5px;
@@ -78,12 +97,40 @@
     margin: 1% 5%;
 }
 
+.return{
+    font-size: 30px;
+    text-align: center;
+    color: #F7F8FF;
+    padding: 15px;
+    margin: 20px 30%;
+    background-color: #3f53b3;
+    border-radius: 300px;
+}
+
+.return:hover{
+    background-color: #11131D;
+}
+
 /*----------   Navigation  -----------*/
 .PageNavi{
     font-size: 20px;
 }
 
 .PageNaviNow{
-    border-bottom: solid 1px black;
-    margin: 0% 30%;
+    border-bottom: solid 1px #11131D;
+    margin: 0% 20%;
+    padding: 10px;
 }
+
+.NaviLink{
+    color: #3f53b3;
+    padding: 10px;
+}
+.NaviLink:hover{
+    background-color: #3f53b3;
+    color: #F7F8FF;
+}
+
+
+
+

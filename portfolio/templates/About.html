@@ -11,23 +11,25 @@
     <section class="PageNavi">
         <img src="../../media/logo/crashrt_alpha.png" width=100%>
         <a href="{% url 'Top' %}">
-            <p>TOP</p>
+            <p class="NaviLink">TOP</p>
         </a>
         <a href="{% url 'MovieList' %}">
-            <p>MOVIE</p>
+            <p class="NaviLink">MOVIE</p>
         </a>
         <a href="{% url 'PictureList' %}">
-            <p>PICTURE</p>
+            <p class="NaviLink">PICTURE</p>
         </a>
         <a href="{% url 'ModelingList' %}">
-            <p>3D Modeling</p>
+            <p class="NaviLink">3D Modeling</p>
         </a>
         <a href="{% url 'NoteList' %}">
-            <p>NOTE</p>
+            <p class="NaviLink">NOTE</p>
         </a>
         <p class="PageNaviNow">ABOUT</p>
-        <p>CONTACT</p>
-    </section>
+        <a href="{% url 'Contact' %}">
+            <p class="NaviLink">CONTACT</p>
+        </a>
+        </section>
 </div>
 
 <div class="PageBodyMain">
@@ -42,12 +44,13 @@
             crashRT
         </h2>
         <p class="profile">
-            MotionGraphics / 3DCG<br>
+            MotionGraphics / 3DCG
+        </p>
+        <p class="profile">
             <a href="https://www.kmc.gr.jp/">京大マイコンクラブ(KMC)</a> 第45代部員
         </p>
         <p class="pr">
-            普段は「かっこいい」作風をメインとして，自分が好きになれるものを制作しています．<br>
-            2018年頃から映像制作をしています．
+            普段は「かっこいい」作風をメインに，自分が好きになれるものを制作しています
         </p>
         <p class="Mail">Mail: crashrt1121@gmail.com</p>
         <div class="Links">

@@ -9,14 +9,26 @@
 <div class="PageBody">
     <div class="PageBodySub">
         <section class="PageNavi">
-            <img src = "../../media/logo/crashrt_alpha.png" width = 100%>
-            <a href="{% url 'Top' %}"><p>TOP</p></a>
+            <img src="../../media/logo/crashrt_alpha.png" width=100%>
+            <a href="{% url 'Top' %}">
+                <p class="NaviLink">TOP</p>
+            </a>
             <p class="PageNaviNow">MOVIE</p>
-            <a href="{% url 'PictureList' %}"><p>PICTURE</p></a>
-            <a href="{% url 'ModelingList' %}"><p>3D Modeling</p></a>
-            <a href="{% url 'NoteList' %}"><p>NOTE</p></a>
-            <a href="{% url 'About' %}"><p>ABOUT</p></a>
-            <p>CONTACT</p>
+            <a href="{% url 'PictureList' %}">
+                <p class="NaviLink">PICTURE</p>
+            </a>
+            <a href="{% url 'ModelingList' %}">
+                <p class="NaviLink">3D Modeling</p>
+            </a>
+            <a href="{% url 'NoteList' %}">
+                <p class="NaviLink">NOTE</p>
+            </a>
+            <a href="{% url 'About' %}">
+                <p class="NaviLink">ABOUT</p>
+            </a>
+            <a href="{% url 'Contact' %}">
+                <p class="NaviLink">CONTACT</p>
+            </a>
         </section>
     </div>
 
@@ -24,18 +36,19 @@
     <div class="PageBodyMain">
         <h1 class="PageTitle">MOVIE</h1>
         <section class="PictureListContainer">
-            {% for item in object_list reversed %}  <!--model : PictureModel -->
-                    {% if item.thumbnail %}
-                    <div class="ListBlock">
-                        <a href="{% url 'MovieDetail' item.pk %}">
-                            <!-- <h1>{{ item.title }}</h1> -->
+            {% for item in object_list reversed %}
+            <!--model : PictureModel -->
+            {% if item.thumbnail %}
+            <div class="ListBlock">
+                <a href="{% url 'MovieDetail' item.pk %}">
+                    <!-- <h1>{{ item.title }}</h1> -->
 
-                            <img class="lazyload"
-                            src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
-                            data-src = "../../media/movie/thumbnail/{{ item.thumbnail }}.jpg" width="100%">
-                        </a>
-                    </div>
-                    {% endif %}
+                    <img class="lazyload"
+                        src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+                        data-src="../../media/movie/thumbnail/{{ item.thumbnail }}.jpg" width="100%">
+                </a>
+            </div>
+            {% endif %}
 
             {% endfor %}
         </section>

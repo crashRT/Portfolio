@@ -4,4 +4,40 @@
 {% endblock header %}
 
 
+{% block content %}
+<div class="PageBodySub">
+    <section class="PageNavi">
+        <img src="../../media/logo/crashrt_alpha.png" width=100%>
+        <a href="{% url 'Top' %}">
+            <p class="NaviLink">TOP</p>
+        </a>
+        <a href="{% url 'MovieList' %}">
+            <p class="NaviLink">MOVIE</p>
+        </a>
+        <a href="{% url 'PictureList' %}">
+            <p class="NaviLink">PICTURE</p>
+        </a>
+        <a href="{% url 'ModelingList' %}">
+            <p class="NaviLink">3D Modeling</p>
+        </a>
+        <a href="{% url 'NoteList' %}">
+            <p class="NaviLink">NOTE</p>
+        </a>
+        <a href="{% url 'About' %}">
+            <p class="NaviLink">ABOUT</p>
+        </a>
+        <p class="PageNaviNow">CONTACT</p>
+    </section>
+</div>
+
+<div class="PageBodyMain">
+    <h2 class="PageTitle">ご依頼について</h2>
+    <p class="contact">
+        映像制作などのお仕事を募集しております．<br>
+        ご連絡，お見積りの際は crashrt1121@gmail.com，
+        またはTwitter(<a href="https://twitter.com/crashRT_doyo">@crashRT_doyo</a>)のDMまでお願いいたします．
+        <br>納期・料金に関しては要相談でお願いします．
+    </p>
+</div>
+
 {% endblock content %}

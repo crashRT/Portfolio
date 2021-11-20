@@ -11,12 +11,14 @@
         <section class="PageNavi">
             <img src = "../../media/logo/crashrt_alpha.png" width = 100%>
             <p class="PageNaviNow">TOP</p>
-            <a href="{% url 'MovieList' %}"><p>MOVIE</p></a>
-            <a href="{% url 'PictureList' %}"><p>PICTURE</p></a>
-            <a href="{% url 'ModelingList' %}"><p>3D Modeling</p></a>
-            <a href="{% url 'NoteList' %}"><p>NOTE</p></a>
-            <p>ABOUT</p>
-            <p>CONTACT</p>
+            <a href="{% url 'MovieList' %}"><p class="NaviLink">MOVIE</p></a>
+            <a href="{% url 'PictureList' %}"><p class="NaviLink">PICTURE</p></a>
+            <a href="{% url 'ModelingList' %}"><p class="NaviLink">3D Modeling</p></a>
+            <a href="{% url 'NoteList' %}"><p class="NaviLink">NOTE</p></a>
+            <p class="NaviLink">ABOUT</p>
+            <a href="{% url 'Contact' %}">
+                <p class="NaviLink">CONTACT</p>
+            </a>
         </section>
     </div>
 
