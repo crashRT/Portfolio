@@ -35,10 +35,13 @@
     <!--画像リスト部分-->
     <div class="PageBodyMain">
         <h1 class="PageTitle">NOTE</h1>
-        <section class="NoteListContainer">
+
+        <p>調整中</p>
+
+        <section class="PictureListContainer">
             {% for item in object_list reversed %}
             <!--model : NoteModel -->
-            <div class="ListBlock">
+            <div class="ListBlock NoteListBlock">
                 <a href="{% url 'NoteDetail' item.pk %}">
                     <h3 class="NoteTitle"> {{ item.title }} </h3>
                     <p class="NoteCategory"> {{ item.category }} </p>

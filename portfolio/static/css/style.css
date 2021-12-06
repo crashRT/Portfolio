@@ -22,25 +22,42 @@ a{
     font-weight: 400;
     font-style: normal;
 }
-.PageBodyMain{
-    width: 85%;
-    float:right;
-}
 
 .PageBodySub{
-    width: 15%;
     text-align: center;
     font-family: jaf-bernina-sans, sans-serif;
     font-weight: 400;
     font-style: normal;
-    float: left;
-    border-right: solid #909090 2px;
-    margin-right:5px;
-    position: fixed;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom:0px;
+}
+@media screen and (min-width:1081px) {
+	/* PC */
+    .PageBodyMain{
+        width: 85%;
+        float: right;
+    }
+
+    .PageBodySub {
+        border-right: solid #909090 2px;
+        width: 15%;
+        margin-right:5px;
+        float: left;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        top: 0px;
+        bottom:0px;
+    }
+}
+
+@media screen and (max-width:1080px) {
+    /* スマホ */
+    .PageBodyMain{
+        float: none;
+    }
+
+    .PageBodySub {
+        float: none;
+    }
 }
 
 .PageBodySub:after{
@@ -102,7 +119,7 @@ a{
     text-align: center;
     color: #F7F8FF;
     padding: 15px;
-    margin: 20px 30%;
+    margin: 20px 35%;
     background-color: #3f53b3;
     border-radius: 300px;
 }
@@ -130,6 +147,16 @@ a{
     background-color: #3f53b3;
     color: #F7F8FF;
 }
+
+/*----------  Note  -----------*/
+
+.NoteListBlock{
+    margin:20px;
+    padding: 20px;
+    border: #13162b solid 1px;
+    border-radius: 10px;
+}
+
 
 /*----------  Contact  -----------*/
 .contact{
