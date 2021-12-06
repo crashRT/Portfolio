@@ -83,7 +83,7 @@ a{
 
 
 
-@media screen and (min-width: 481px) {
+@media screen and (min-width: 721px) {
     .ListBlock{
         width:44%;
     }
@@ -171,7 +171,8 @@ li{
     .NaviMenu{
         color: #F7F8FF;
         background-color: #3f53b3;
-        padding: 10px;
+        padding: 10px 50px;
+        border-radius: 100px;
     }
 
     .NaviLink{
