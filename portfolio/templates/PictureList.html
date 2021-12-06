@@ -9,26 +9,52 @@
 <div class="PageBody">
     <div class="PageBodySub">
         <section class="PageNavi">
-            <img src="../../media/logo/crashrt_alpha.png" width=100%>
             <a href="{% url 'Top' %}">
-                <p class="NaviLink">TOP</p>
+                <img src="../../media/logo/crashrt_alpha.png" width=100%>
             </a>
-            <a href="{% url 'MovieList' %}">
-                <p class="NaviLink">MOVIE</p>
-            </a>
-            <p class="PageNaviNow">PICTURE</p>
-            <a href="{% url 'ModelingList' %}">
-                <p class="NaviLink">3D Modeling</p>
-            </a>
-            <a href="{% url 'NoteList' %}">
-                <p class="NaviLink">NOTE</p>
-            </a>
-            <a href="{% url 'About' %}">
-                <p class="NaviLink">ABOUT</p>
-            </a>
-            <a href="{% url 'Contact' %}">
-                <p class="NaviLink">CONTACT</p>
-            </a>
+
+            <ul class="menu ul_left">
+                <li>
+                    <a href="javascript:void(0);">
+                        <p class="NaviMenu">MENU</p>
+                    </a>
+                    <ul class="ul_left">
+                        <li>
+                            <a href="{% url 'Top' %}">
+                                <p class="NaviLink">TOP</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'MovieList' %}">
+                                <p class="NaviLink">MOVIE</p>
+                            </a>
+                        </li>
+                        <li>
+                            <p class="PageNaviNow">PICTURE</p>
+                        </li>
+                        <li>
+                            <a href="{% url 'ModelingList' %}">
+                                <p class="NaviLink">3D Modeling</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'NoteList' %}">
+                                <p class="NaviLink">NOTE</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'About' %}">
+                                <p class="NaviLink">ABOUT</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'Contact' %}">
+                                <p class="NaviLink">CONTACT</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
         </section>
     </div>
 
