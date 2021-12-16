@@ -32,7 +32,7 @@ SECRET_KEY = env('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = True
-ALLOWED_HOSTS = ['portfoliotest-326221.an.r.appspot.com', 'localhost']
+ALLOWED_HOSTS = ['portfolio-335223.an.r.appspot.com', 'localhost','crashrt.work']
 
 #DEBUG = False
 #ALLOWED_HOSTS = ['*']
