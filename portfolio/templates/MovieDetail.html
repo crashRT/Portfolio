@@ -8,7 +8,7 @@
     <h1>{{ object.title }}</h1>
 
     <div class="YoutubeMovie">
-    {% if object.picture1 %}
+    {% if object.movie %}
         {{ object.movie |safe }}
     {% endif %}
     </div>
@@ -50,7 +50,7 @@
     {% endif %}
 
 
-    <p>
+    <p class="discription">
         {{ object.discription |safe}}
     </p>
 
