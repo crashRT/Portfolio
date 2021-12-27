@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+<!--リンク部分-->
+<div class="PageBody">
+    <div class="PageBodySub">
+        <section class="PageNavi">
+            <a href="{% url 'Top' %}">
+                <img src="../../media/logo/crashrt_alpha.png" width=100%>
+            </a>
+            <ul class="menu ul_left">
+                <li>
+                    <a href="javascript:void(0);">
+                        <p class="NaviMenu">MENU</p>
+                    </a>
+                    <ul class="ul_left">
+                        <li>
+                            <a href="{% url 'Top' %}">
+                                <p class="NaviLink">TOP</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'MovieList' %}">
+                                <p class="NaviLink">MOVIE</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'PictureList' %}">
+                                <p class="NaviLink">PICTURE</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'ModelingList' %}">
+                                <p class="NaviLink">3D Modeling</p>
+                            </a>
+                        </li>
+                        <li>
+                            <p class="PageNaviNow">NOTE</p>
+                        </li>
+                        <li>
+                            <a href="{% url 'About' %}">
+                                <p class="NaviLink">ABOUT</p>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="{% url 'Contact' %}">
+                                <p class="NaviLink">CONTACT</p>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </div>
+
+    <!--画像リスト部分-->
+    <div class="PageBodyMain">
+        <h1 class="PageTitle">NOTE</h1>
+
+        <p>調整中</p>
+
+        <section class="PictureListContainer">
+            {% for item in object_list reversed %}
+            <!--model : NoteModel -->
+            <div class="ListBlock NoteListBlock">
+                <a href="{% url 'NoteDetail' item.pk %}">
+                    <h3 class="NoteTitle"> {{ item.title }} </h3>
+                    <p class="NoteCategory"> {{ item.category }} </p>
+                    {% if item.abstract %}
+                    <p class="NoteAbstract"> {{ item.abstract }}</p>
+                    {% endif %}
+                </a>
+            </div>
+
+            {% endfor %}
+        </section>
+    </div>
+</div>
+
+{% endblock content %}

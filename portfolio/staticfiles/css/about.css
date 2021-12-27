@@ -1,0 +1,59 @@
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.LinkUrl{
+    margin: 10px;
+}
+
+.profile{
+    margin-bottom: 40px;
+}
+
+.Icon{
+    margin: 30px;
+    padding: 30px;
+}
+
+@media screen and (min-width: 721px) {
+    .Icon{
+        width: 600px;
+        float: left;
+        margin: 30px;
+        padding: 30px;
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .Icon{
+        width: 90%;
+        margin: 30px;
+        padding: 30px;
+    }
+}
+
+.Mail{
+    margin-top: 40px;
+    font-size: 20px;
+}
+
+.Discription{
+    padding: 30px;
+    margin: 30px;
+    float: left;
+}
+
+.Links{
+    width: 150px;
+    margin: 50px 0;
+}
+
+.LinkUrl{
+    margin: 10px;
+}
+
+li{
+    margin-left: 20px;
+}

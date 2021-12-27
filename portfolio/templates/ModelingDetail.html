@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+    <h1>{{ object.title }}</h1>
+
+    {% if object.picture1 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/modeling/{{ object.picture1 }}.png"
+        class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture2 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/modeling/{{ object.picture2 }}.png"
+        class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture3 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/modeling/{{ object.picture3 }}.png"
+        class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture4 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/modeling/{{ object.picture4 }}.png"
+        class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture5 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/modeling/{{ object.picture5 }}.png"
+        class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture6 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/modeling/{{ object.picture6 }}.png"
+        class="DetailPicture lazyload">
+    {% endif %}
+
+
+    <p class="discription">{{ object.discription |safe }}</p>
+
+    <a href="{% url 'ModelingList' %}">
+
+        <p class="return">一覧へ</p>
+
+</a>
+
+{% endblock content %}

@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+
+{% block content %}
+<div class="PageBodySub">
+    <section class="PageNavi">
+        <a href="{% url 'Top' %}">
+            <img src="../../media/logo/crashrt_alpha.png" width=100%>
+        </a>
+
+        <ul class="menu ul_left">
+            <li>
+                <a href="javascript:void(0);">
+                    <p class="NaviMenu">MENU</p>
+                </a>
+                <ul class="ul_left">
+                    <li>
+                        <a href="{% url 'Top' %}">
+                            <p class="NaviLink">TOP</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'MovieList' %}">
+                            <p class="NaviLink">MOVIE</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'PictureList' %}">
+                            <p class="NaviLink">PICTURE</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'ModelingList' %}">
+                            <p class="NaviLink">3D Modeling</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'NoteList' %}">
+                            <p class="NaviLink">NOTE</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="{% url 'About' %}">
+                            <p class="NaviLink">ABOUT</p>
+                        </a>
+                    </li>
+                    <li>
+                        <p class="PageNaviNow">CONTACT</p>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </section>
+</div>
+
+<div class="PageBodyMain">
+    <h2 class="PageTitle">ご依頼について</h2>
+    <p class="contact">
+        映像制作などのお仕事を募集しております．<br>
+        ご依頼の際は crashrt1121[at]gmail.com ([at]を＠に置き換えてください) ，<br>
+        またはTwitter(<a href="https://twitter.com/crashRT_doyo">@crashRT_doyo</a>)のDMまでご連絡下さい．
+        <br>納期・料金に関しては要相談でお願いします．
+    </p>
+</div>
+
+{% endblock content %}

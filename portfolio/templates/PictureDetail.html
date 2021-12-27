@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% block header %}
+{% endblock header %}
+
+{% block content %}
+
+    {% if object.picture1 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/picture/{{ object.picture1 }}.png"
+        width="100%" class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture2 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/picture/{{ object.picture2 }}.png"
+        width="100%" class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture3 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/picture/{{ object.picture3 }}.png"
+        width="100%" class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture4 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/picture/{{ object.picture4 }}.png"
+        width="100%" class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture5 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/picture/{{ object.picture5 }}.png"
+        width="100%" class="DetailPicture lazyload">
+    {% endif %}
+
+    {% if object.picture6 %}
+        <img src="data:image/gif;base64,R0lGODlhAQABAGAAACH5BAEKAP8ALAAAAAABAAEAAAgEAP8FBAA7"
+        data-src = "../../../media/picture/{{ object.picture6 }}.png"
+        width="100%" class="DetailPicture lazyload" >
+    {% endif %}
+
+
+    <p class="discription">{{ object.discription |safe}}</p>
+
+    <a href="{% url 'PictureList' %}">
+
+            <p class="return">一覧へ</p>
+
+    </a>
+
+{% endblock content %}
