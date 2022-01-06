@@ -1,5 +1,4 @@
-# Portfolio
-https://crashrt.work/
+# Portfolio https://crashrt.work/
 
 crashRT の3DCGとかの作品をまとめておくサイト
 
@@ -27,7 +26,7 @@ crashRT の3DCGとかの作品をまとめておくサイト
 - サムネは360pのjpeg
 
 ## 3D MODELING
-- モデリングしやつを載せるところ
+- モデリングしたやつを載せるところ
 - サムネは360pのjpeg
 
 ## NOTE
