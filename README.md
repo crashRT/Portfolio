@@ -43,3 +43,5 @@ crashRT の3DCGとかの作品をまとめておくサイト
 
 # 使ってるもの
 - Django
+
+UptimeRobotで落ちてないか確認させるようにした
