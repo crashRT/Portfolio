@@ -44,7 +44,7 @@
     {% endif %}
 
 
-    <p class="discription">{{ object.discription |safe }}</p>
+    <p class="discription">{{ object.discription | safe | linebreaks | urlize }}</p>
 
     <a href="{% url 'ModelingList' %}">
 
