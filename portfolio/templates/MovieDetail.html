@@ -51,7 +51,7 @@
 
 
     <p class="discription">
-        {{ object.discription |safe}}
+        {{ object.discription |safe | linebreaks | urlize }}
     </p>
 
     <a href="{% url 'MovieList' %}">
