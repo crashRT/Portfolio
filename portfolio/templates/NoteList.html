@@ -68,7 +68,7 @@
             <!--model : NoteModel -->
             <div class="ListBlock NoteListBlock">
                 <a href="{% url 'NoteDetail' item.pk %}">
-                    <h3 class="NoteTitle"> {{ item.title }} </h3>
+                    <p class="NoteTitle"> {{ item.title }} </p>
                     <p class="NoteCategory"> {{ item.category }} </p>
                     {% if item.abstract %}
                     <p class="NoteAbstract"> {{ item.abstract }}</p>
