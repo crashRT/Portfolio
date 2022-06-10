@@ -31,7 +31,7 @@ STATICFILES_DIRS = [
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
-DEBUG = False
+DEBUG = True
 ALLOWED_HOSTS = ['portfolio-335223.an.r.appspot.com',
                  'localhost', 'crashrt.work', 'www.crashrt.work']
 
