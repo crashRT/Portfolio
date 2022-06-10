@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 import environ
-
+from .local_settins import *
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -27,12 +27,14 @@ STATICFILES_DIRS = [
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+#SECRET_KEY = env('SECRET_KEY')
+# ↑別ファイルに移したので削除
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
 DEBUG = False
-ALLOWED_HOSTS = ['portfolio-335223.an.r.appspot.com', 'localhost','crashrt.work','www.crashrt.work']
+ALLOWED_HOSTS = ['portfolio-335223.an.r.appspot.com',
+                 'localhost', 'crashrt.work', 'www.crashrt.work']
 
 #DEBUG = False
 #ALLOWED_HOSTS = ['*']
@@ -90,8 +92,6 @@ WSGI_APPLICATION = 'portfolio.wsgi.application'
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
 
-
-
 # GAE本番環境
 DATABASES = {
     'default': {
@@ -104,28 +104,25 @@ DATABASES = {
 }
 
 
-
-#開発環境
+# 開発環境
 # 事前に./cloud_sql_proxyを実行してプロキシ経由でアクセスできるようにする必要がある。
 #     DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-#}
+# }
 
-#DATABASES = {
+# DATABASES = {
 #        'default': {
-##            'ENGINE': 'django.db.backends.mysql',
+# 'ENGINE': 'django.db.backends.mysql',
 #            'HOST': '127.0.0.1',
-##            'PORT': '3306',
+# 'PORT': '3306',
 #            'USER': '[YOUR-USERNAME]',
 #            'PASSWORD': '[YOUR-PASSWORD]',
 #            'NAME': '[YOUR-DATABASE]',
 #        }
 #    }
-
-
 
 
 # Password validation
@@ -158,9 +155,6 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-
-
-
 
 
 # Default primary key field type
