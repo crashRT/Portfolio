@@ -1,7 +1,7 @@
 from pathlib import Path
 import os
 import environ
-
+from .local_settins import *
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -26,7 +26,8 @@ STATICFILES_DIRS = [
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY')
+#SECRET_KEY = env('SECRET_KEY')
+# ↑別ファイルに移したので削除
 
 # SECURITY WARNING: don't run with debug turned on in production!
 
@@ -110,6 +111,15 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# 開発環境
+# 事前に./cloud_sql_proxyを実行してプロキシ経由でアクセスできるようにする必要がある。
+#     DATABASES = {
+#    'default': {
+#        'ENGINE': 'django.db.backends.sqlite3',
+#        'NAME': BASE_DIR / 'db.sqlite3',
+#    }
+# }
 
 # DATABASES = {
 #        'default': {
