@@ -1,3 +1,4 @@
 .env
 __pycache__
 staticfiles
+portfolio/portfolio/local_settings.py
