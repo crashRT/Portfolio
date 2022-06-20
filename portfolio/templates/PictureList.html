@@ -63,7 +63,6 @@
         <h1 class="PageTitle">PICTURE</h1>
         <section class="PictureListContainer">
             {% for item in object_list reversed %}
-            <!--model : PictureModel -->
             {% if item.picture1 %}
             <div class="ListBlock">
                 <a href="{% url 'PictureDetail' item.pk %}">
