@@ -1,4 +1,5 @@
 .env
 __pycache__
+*.pyc
 staticfiles
-portfolio/portfolio/local_settings.py
+db.sqlite3
