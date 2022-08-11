@@ -24,15 +24,15 @@
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                {% for work in works_list%}
                 <div class="col">
                     <div class="card shadow-sm">
 
-                        <div class="card-body">
-                            <img src="../../media/Daybreak.png" alt="Grapefruit slice atop a pile of other slices">
+                        <img class="cart-body" width="100%" src="../../media/thumbnail/{{work.thumbnail}}">
 
-                        </div>
                     </div>
                 </div>
+                {% endfor %}
             </div>
         </div>
     </div>
