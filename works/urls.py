@@ -1,7 +1,6 @@
-from urllib.parse import urlparse
-from django.contrib import admin
 from django.urls import path
+from .views import worklistview
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path('', worklistview, name='worklist'),
 ]
