@@ -1,6 +1,3 @@
-from email import contentmanager
-from pyexpat import model
-from termios import OFDEL
 from django.db import models
 
 # Create your models here.
