@@ -10,7 +10,10 @@
 
 <main>
     <h1 class="display-4 fw-bold text-center">{{work.title}}</h1>
-    <p class="lead">{{work.date}}</p>
+
+    {% if work.date %}
+    <p class="lead text-center">{{work.date}}</p>
+    {% endif %}
 
     {% if work.pictureMain %}
     <div class="container-sm my-4">

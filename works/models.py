@@ -11,12 +11,18 @@ CATEGORY = (('pictre', 'Picture'),
 
 class WorksModel(models.Model):
     title = models.CharField(max_length=50)
+    date = models.DateField(blank=True, null=True)
     thumbnail = models.CharField(max_length=100,)
-    youtube = models.CharField(max_length=100, null=True, blank=True)
-    vimeo = models.CharField(max_length=100, null=True, blank=True)
-    niconico = models.CharField(max_length=100, null=True, blank=True)
-    pictureMain = models.CharField(max_length=100, null=True, blank=True)
-    picture1 = models.CharField(max_length=100, null=True, blank=True)
+    youtube = models.CharField(
+        max_length=100, null=True, blank=True, help_text='youtubeのID')
+    vimeo = models.CharField(max_length=100, null=True,
+                             blank=True, help_text='vimeoのID')
+    niconico = models.CharField(
+        max_length=100, null=True, blank=True, help_text='niconicoのID')
+    pictureMain = models.CharField(
+        max_length=100, null=True, blank=True, help_text='一番上に単体で表示')
+    picture1 = models.CharField(
+        max_length=100, null=True, blank=True, help_text='以下はギャラリー部分')
     picture2 = models.CharField(max_length=100, null=True, blank=True)
     picture3 = models.CharField(max_length=100, null=True, blank=True)
     picture4 = models.CharField(max_length=100, null=True, blank=True)
