@@ -15,6 +15,7 @@ class WorksModel(models.Model):
     youtube = models.CharField(max_length=100, null=True, blank=True)
     vimeo = models.CharField(max_length=100, null=True, blank=True)
     niconico = models.CharField(max_length=100, null=True, blank=True)
+    pictureMain = models.CharField(max_length=100, null=True, blank=True)
     picture1 = models.CharField(max_length=100, null=True, blank=True)
     picture2 = models.CharField(max_length=100, null=True, blank=True)
     picture3 = models.CharField(max_length=100, null=True, blank=True)
