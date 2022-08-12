@@ -2,11 +2,13 @@ from django.db import models
 
 # Create your models here.
 
-CATEGORY = (('pictre', 'Picture'),
+CATEGORY = (('picture', 'Picture'),
             ('movie', 'Movie'),
             ('modeling', 'Modeling'),
             ('other', 'other')
             )
+
+tags = ('picture', 'movie', 'modeling', 'other')
 
 
 class WorksModel(models.Model):

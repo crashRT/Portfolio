@@ -22,13 +22,29 @@
         </div>
     </section>
 
+    <div class="dropdown">
+        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+            CATEGORY
+        </button>
+        <ul class="dropdown-menu">
+            {% for a in taglist %}
+            <li><a class="dropdown-item" href="/works/category/{{a}}">{{a}}</a></li>
+            {% endfor %}
+        </ul>
+    </div>
+
+    <ul class="">
+        {% for tag in taglist %}
+        <li><a href={% url 'worktag' tag %}>{{tag}}</a></li>
+        {% endfor %}
+    </ul>
     <div class="album py-5 bg-light">
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                 {% for work in works_list%}
                 <div class="col">
-                    <a href="/works/{{work.pk}}">
+                    <a href="/works/detail/{{work.pk}}">
                         <div class="card shadow-sm">
 
                             <img class="cart-body" width="100%" src="../../media/thumbnail/{{work.thumbnail}}">
