@@ -7,4 +7,4 @@ from .models import WorksModel
 
 def worklistview(request):
     work_list = WorksModel.objects.all()
-    return render(request, 'worklist.html', {'works_list': work_list})
+    return render(request, 'works/workslist.html', {'works_list': work_list})
