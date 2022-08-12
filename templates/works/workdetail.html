@@ -8,8 +8,78 @@
 
 {% include 'works/worksheader.html' %}
 
-<h1 class="display-4 fw-normal text-center">{{ work.title }}</h1>
+<main>
+    <h1 class="display-4 fw-bold text-center">{{work.title}}</h1>
+    <p class="lead">{{work.date}}</p>
 
+    {% if work.pictureMain %}
+    <div class="container-sm my-4">
+        <img width="100%" src="/media/{{work.pictureMain}}" alt="{{works.title}}">
+    </div>
+    {% endif %}
 
+    <div class="container">
+        <div class="row card-body my-5 text-center">
+            {% if work.youtube %}
+            <div class="col embed-responsive embed-responsive-16by9">
+                <iframe width="480" height="270" class="embed-responsive-item"
+                    src="https://www.youtube.com/embed/{{work.youtube}}" allowfullscreen></iframe>
+            </div>
+            {% endif %}
+
+            {% if work.vimeo %}
+            <div class="col embed-responsive embed-responsive-16by9">
+                <iframe width="480" height="270" class="embed-responsive-item"
+                    src="https://player.vimeo.com/video/{{work.vimeo}}" allowfullscreen></iframe>
+            </div>
+            {% endif %}
+
+            {% if work.niconico %}
+            <div class="col embed-responsive embed-responsive-16by9">
+                <script type="application/javascript"
+                    src="https://embed.nicovideo.jp/watch/{{work.niconico}}/script?w=480&h=270"></script>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+    <div class="container my-5">
+        {{ work.description | linebreaks | urlize }}
+    </div>
+
+    <div class="container">
+        <div class="row row-cols-1 row-cols-sm-2 g-3 text-center">
+            {% if work.picture1 %}
+            <div class="col">
+                <img width="100%" src="/media/{{work.picture1}}" alt="">
+            </div>
+            {% endif %}
+            {% if work.picture2 %}
+            <div class="col">
+                <img width="100%" src="/media/{{work.picture2}}" alt="">
+            </div>
+            {% endif %}
+            {% if work.picture3 %}
+            <div class="col">
+                <img width="100%" src="/media/{{work.picture3}}" alt="">
+            </div>
+            {% endif %}
+            {% if work.picture4 %}
+            <div class="col">
+                <img width="100%" src="/media/{{work.picture4}}" alt="">
+            </div>
+            {% endif %}
+            {% if work.picture5 %}
+            <div class="col">
+                <img width="100%" src="/media/{{work.picture5}}" alt="">
+            </div>
+            {% endif %}
+            {% if work.picture6 %}
+            <div class="col">
+                <img width="100%" src="/media/{{work.picture6}}" alt="">
+            </div>
+            {% endif %}
+        </div>
+    </div>
+</main>
 
 {% endblock content %}
