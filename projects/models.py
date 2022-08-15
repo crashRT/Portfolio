@@ -2,6 +2,12 @@ from django.db import models
 
 # Create your models here.
 
+CATEGORY = (('aescript', 'aescript'),
+            ('web', 'web'),
+            ('other', 'other')
+            )
+
+tags = ('web', )
 class ProjectsModel(models.Model):
     title = models.CharField(max_length=100)
     date = models.DateField(blank=True, null=True)
@@ -15,6 +21,7 @@ class ProjectsModel(models.Model):
     picture5 = models.CharField(max_length=100, null=True, blank=True)
     picture6 = models.CharField(max_length=100, null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+    tag = models.CharField(max_length=30, choices=CATEGORY)
 
     def __str__(self):
         return self.title
