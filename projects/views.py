@@ -3,7 +3,7 @@ from .models import ProjectsModel
 
 # Create your views here.
 
-def projectsdetailview(request, pk):
+def projectslistview(request, pk):
     work = ProjectsModel.objects.get(pk=pk)
     return render(request, 'works/workdetail.html', {'work': work})
 
