@@ -5,8 +5,8 @@ from .models import ProjectsModel
 
 def projectslistview(request, pk):
     projects = ProjectsModel.objects.all()
-    return render(request, 'projects/projectsdetail.html', {'projects':projects})
+    return render(request, 'projects/detail.html', {'projects':projects})
 
 def projectdetailview(request, pk):
     project = ProjectsModel.objects.get(pk=pk)
-    return render(request, 'projects/projectsdetail.html', {'project': project})
+    return render(request, 'projects/detail.html', {'project': project})
