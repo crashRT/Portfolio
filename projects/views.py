@@ -4,9 +4,9 @@ from .models import ProjectsModel
 # Create your views here.
 
 def projectslistview(request, pk):
-    work = ProjectsModel.objects.get(pk=pk)
-    return render(request, 'works/workdetail.html', {'work': work})
+    projects = ProjectsModel.objects.all()
+    return render(request, 'projects/projectsdetail.html', {'projects':projects})
 
 def projectdetailview(request, pk):
-    work = ProjectsModel.objects.get(pk=pk)
-    return render(request, 'works/workdetail.html', {'work': work})
+    project = ProjectsModel.objects.get(pk=pk)
+    return render(request, 'projects/projectsdetail.html', {'project': project})
