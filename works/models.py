@@ -18,7 +18,7 @@ class WorksModel(models.Model):
     youtube = models.CharField(
         max_length=100, null=True, blank=True, help_text='youtubeのID')
     vimeo = models.CharField(max_length=100, null=True,
-                             blank=True, help_text='vimeoのID')
+                                blank=True, help_text='vimeoのID')
     niconico = models.CharField(
         max_length=100, null=True, blank=True, help_text='niconicoのID')
     pictureMain = models.CharField(
