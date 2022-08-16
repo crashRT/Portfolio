@@ -1,0 +1,69 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+{% endblock header %}
+
+{% block content %}
+
+
+{% include 'notes/header.html' %}
+
+<main>
+
+    <section class="py-5 text-center container">
+        <div class="row py-lg-5">
+            <div class="col-lg-6 col-md-8 mx-auto">
+                <h1 class="fw-light"> Notes </h1>
+                <p class="lead text-muted">Something short and leading about the collection below—its contents, the
+                    creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
+                    entirely.</p>
+            </div>
+        </div>
+    </section>
+
+
+    <div class="album py-5 bg-light">
+        <div class="container mb-5">
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                    aria-expanded="false">
+                    CATEGORY
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href={% url 'noteslist' %}>ALL</a></li>
+                    {% for tag in taglist %}
+                    <li><a class="dropdown-item" href={% url 'notestag' tag %}>{{tag}}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="container">
+
+            <div class="row row-cols-1 row-cols-sm-2 g-3">
+                {% for note in notes_list %}
+                <div class="col">
+                    <a href="{{note.url}}" class="text-reset text-decoration-none">
+                        <div class="card shadow-sm">
+                            <div class="card-body">
+                                <h3>{{note.title}}</h3>
+                                <p class="card-text">{{note.abstract}}</p>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+
+</main>
+
+
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+
+
+
+{% endblock content %}
