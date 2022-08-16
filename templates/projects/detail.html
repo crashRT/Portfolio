@@ -9,76 +9,56 @@
 {% include 'projects/header.html' %}
 
 <main>
-    <h1 class="display-4 fw-bold text-center">{{work.title}}</h1>
+    <h1 class="display-4 fw-bold text-center">{{project.title}}</h1>
 
-    {% if work.date %}
-    <p class="lead text-center">{{work.date}}</p>
+    {% if project.date %}
+    <p class="lead text-center">{{project.date}}</p>
     {% endif %}
 
-    {% if work.pictureMain %}
+    <p class="text-center">
+        {{project.abstract}}
+    </p>
+
+    {% if project.pictureMain %}
     <div class="container-sm my-4">
-        <img width="100%" src="/media/{{work.pictureMain}}" alt="{{works.title}}">
+        <img width="100%" src="/media/projects/{{project.pictureMain}}" alt="{{project.title}}">
     </div>
     {% endif %}
 
-    <div class="container">
-        <div class="row card-body my-5 text-center">
-            {% if work.youtube %}
-            <div class="col embed-responsive embed-responsive-16by9">
-                <iframe width="480" height="270" class="embed-responsive-item"
-                    src="https://www.youtube.com/embed/{{work.youtube}}" allowfullscreen></iframe>
-            </div>
-            {% endif %}
-
-            {% if work.vimeo %}
-            <div class="col embed-responsive embed-responsive-16by9">
-                <iframe width="480" height="270" class="embed-responsive-item"
-                    src="https://player.vimeo.com/video/{{work.vimeo}}" allowfullscreen></iframe>
-            </div>
-            {% endif %}
-
-            {% if work.niconico %}
-            <div class="col embed-responsive embed-responsive-16by9">
-                <script type="application/javascript"
-                    src="https://embed.nicovideo.jp/watch/{{work.niconico}}/script?w=480&h=270"></script>
-                {% endif %}
-            </div>
-        </div>
-    </div>
     <div class="container my-5">
-        {{ work.description | linebreaks | urlize }}
+        {{ project.description | linebreaks | urlize }}
     </div>
 
     <div class="container">
         <div class="row row-cols-1 row-cols-sm-2 g-3 text-center">
-            {% if work.picture1 %}
+            {% if project.picture1 %}
             <div class="col">
-                <img width="100%" src="/media/{{work.picture1}}" alt="">
+                <img width="100%" src="/media/projects/{{project.picture1}}" alt="">
             </div>
             {% endif %}
-            {% if work.picture2 %}
+            {% if project.picture2 %}
             <div class="col">
-                <img width="100%" src="/media/{{work.picture2}}" alt="">
+                <img width="100%" src="/media/projects/{{project.picture1}}" alt="">
             </div>
             {% endif %}
-            {% if work.picture3 %}
+            {% if project.picture3 %}
             <div class="col">
-                <img width="100%" src="/media/{{work.picture3}}" alt="">
+                <img width="100%" src="/media/projects/{{project.picture1}}" alt="">
             </div>
             {% endif %}
-            {% if work.picture4 %}
+            {% if project.picture4 %}
             <div class="col">
-                <img width="100%" src="/media/{{work.picture4}}" alt="">
+                <img width="100%" src="/media/projects/{{project.picture1}}" alt="">
             </div>
             {% endif %}
-            {% if work.picture5 %}
+            {% if project.picture5 %}
             <div class="col">
-                <img width="100%" src="/media/{{work.picture5}}" alt="">
+                <img width="100%" src="/media/projects/{{project.picture1}}" alt="">
             </div>
             {% endif %}
-            {% if work.picture6 %}
+            {% if project.picture6 %}
             <div class="col">
-                <img width="100%" src="/media/{{work.picture6}}" alt="">
+                <img width="100%" src="/media/projects/{{project.picture1}}" alt="">
             </div>
             {% endif %}
         </div>
