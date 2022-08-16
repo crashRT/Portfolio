@@ -5,7 +5,7 @@ from .models import NotesModel, tags
 
 
 def noteslistview(request):
-    notes_list = NotesModel.objects.all()
+    notes_list = NotesModel.objects.order_by("date")
     context = {
         'notes_list': notes_list,
         'taglist': tags
