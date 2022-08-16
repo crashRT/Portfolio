@@ -31,6 +31,7 @@
                     CATEGORY
                 </button>
                 <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href={% url "workslist" %}>All</a></li>
                     {% for tag in taglist %}
                     <li><a class="dropdown-item" href={% url "worktag" tag %}>{{tag}}</a></li>
                     {% endfor %}

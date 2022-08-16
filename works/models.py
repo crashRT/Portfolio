@@ -8,7 +8,7 @@ CATEGORY = (('picture', 'Picture'),
             ('other', 'other')
             )
 
-tags = ('picture', 'movie', 'modeling', 'other')
+tags = ('picture', 'movie', 'modeling',)
 
 
 class WorksModel(models.Model):
