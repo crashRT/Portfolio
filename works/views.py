@@ -11,12 +11,12 @@ def worklistview(request):
         'works_list': work_list,
         'taglist': tags,
     }
-    return render(request, 'works/workslist.html', context)
+    return render(request, 'works/list.html', context)
 
 
 def workdetailview(request, pk):
     work = WorksModel.objects.get(pk=pk)
-    return render(request, 'works/workdetail.html', {'work': work})
+    return render(request, 'works/detail.html', {'work': work})
 
 
 def workstagview(requested, tagname):
@@ -25,4 +25,4 @@ def workstagview(requested, tagname):
         'works_list': work_list,
         'taglist': tags,
     }
-    return render(requested, 'works/workslist.html', context)
+    return render(requested, 'works/list.html', context)

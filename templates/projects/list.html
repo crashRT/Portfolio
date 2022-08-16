@@ -7,14 +7,14 @@
 {% block content %}
 
 
-{% include 'works/worksheader.html' %}
+{% include 'projects/header.html' %}
 
 <main>
 
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"> Works</h1>
+                <h1 class="fw-light"> Projects </h1>
                 <p class="lead text-muted">Something short and leading about the collection below—its contents, the
                     creator, etc. Make it short and sweet, but not too short so folks don’t simply skip over it
                     entirely.</p>
@@ -31,8 +31,9 @@
                     CATEGORY
                 </button>
                 <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" href={% url 'projectslist' %}>ALL</a></li>
                     {% for tag in taglist %}
-                    <li><a class="dropdown-item" href={% url 'worktag' tag %}>{{tag}}</a></li>
+                    <li><a class="dropdown-item" href={% url 'projectstag' tag %}>{{tag}}</a></li>
                     {% endfor %}
                 </ul>
             </div>
@@ -40,13 +41,16 @@
         <div class="container">
 
             <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                {% for work in works_list%}
+                {% for project in projects_list %}
                 <div class="col">
-                    <a href="/works/detail/{{work.pk}}">
+                    <a href={% url 'projectsdetail' project.pk %} class="text-reset text-decoration-none">
                         <div class="card shadow-sm">
-
-                            <img class="cart-body" width="100%" src="../../media/thumbnail/{{work.thumbnail}}">
-
+                            <img class="cart-body" width="100%"
+                                src="../../media/projects/thumbnail/{{project.thumbnail}}">
+                            <div class="card-body">
+                                <h3>{{project.title}}</h3>
+                                <p class="card-text">{{project.abstract}}</p>
+                            </div>
                         </div>
                     </a>
                 </div>
