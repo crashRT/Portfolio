@@ -1,0 +1,133 @@
+{% extends 'base.html' %}
+
+{% block header %}
+
+
+{% endblock header %}
+
+{% block content %}
+
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+        <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+            <img src="/media/Logo/crashrt_alpha.png" alt="crashRT">
+        </a>
+
+        <ul class="nav nav-pills">
+            <li class="nav-item"><a href={% url 'top' %} class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href={% url 'worklist' %} class="nav-link">Works</a></li>
+            <li class="nav-item"><a href={% url 'projectslist' %} class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href={% url 'noteslist' %} class="nav-link">Notes</a></li>
+            <li class="nav-item"><a href={% url 'about' %} class="nav-link">About</a></li>
+            <li class="nav-item"><a href={% url 'contact' %} class="nav-link">Contact</a></li>
+        </ul>
+    </header>
+</div>
+
+<main>
+    <section>
+        <div class="position-relative overflow-hidden text-center">
+            <div class="container mb-3">
+                <h1>crashRT</h1>
+                <p class="lead">
+                    Motion Graphics / 3DCG
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="album py-5 bg-light my-3">
+            <div class="container">
+                <a href="{% url 'worklist' %}" class=" text-reset text-decoration-none ">
+                    <h2 class="text-center">Recent Works</h2>
+                </a>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for work in works_list%}
+                    <div class="col">
+                        <a href="/works/detail/{{work.pk}}">
+                            <div class="card shadow-sm">
+
+                                <img class="cart-body" width="100%" src="/media/works/thumbnail/{{work.thumbnail}}">
+
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{% url 'worklist' %}">
+                        <button class="btn btn-outline-secondary my-3" type="button">more</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="album py-5 bg-light my-3">
+            <div class="container">
+                <a href="{% url 'projectslist' %}" class=" text-reset text-decoration-none ">
+                    <h2 class="text-center">Recent Projects</h2>
+                </a>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for project in projects_list %}
+                    <div class="col">
+                        <a href={% url 'projectsdetail' project.pk %} class="text-reset text-decoration-none">
+                            <div class="card shadow-sm h-100">
+                                <img class="cart-body" width="100%"
+                                    src="../../media/projects/thumbnail/{{project.thumbnail}}">
+                                <div class="card-body">
+                                    <h3>{{project.title}}</h3>
+                                    <p class="card-text">{{project.abstract}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{% url 'projectslist' %}">
+                        <button class="btn btn-outline-secondary my-3" type="button">more</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="album py-5 bg-light my-3">
+            <div class="container">
+                <a href="{% url 'noteslist' %}" class=" text-reset text-decoration-none ">
+                    <h2 class="text-center">Recent Notes</h2>
+                </a>
+                <div class="row row-cols-1 row-cols-sm-2 g-3">
+                    {% for note in notes_list %}
+                    <div class="col">
+                        <a href="{{note.url}}" class="text-reset text-decoration-none">
+                            <div class="card shadow-sm h-100">
+                                <div class="card-body">
+                                    <h3>{{note.title}}</h3>
+                                    <p class="card-text">{{note.abstract}}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{% url 'noteslist' %}">
+                        <button class="btn btn-outline-secondary my-3" type="button">more</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+
+<script src="/docs/5.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa"
+    crossorigin="anonymous"></script>
+
+
+
+{% endblock content %}
