@@ -9,7 +9,7 @@ from notes.models import NotesModel
 def worklistview(request):
     works_list = WorksModel.objects.all()[:6]
     projects_list = ProjectsModel.objects.all()[:3]
-    notes_list = NotesModel.objects.all()
+    notes_list = NotesModel.objects.all()[:3]
     context = {
         'works_list': works_list,
         'projects_list': projects_list,
