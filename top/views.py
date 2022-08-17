@@ -7,9 +7,9 @@ from notes.models import NotesModel
 
 
 def topview(request):
-    works_list = WorksModel.objects.all()[:6]
-    projects_list = ProjectsModel.objects.all()[:3]
-    notes_list = NotesModel.objects.all()[:4]
+    works_list = WorksModel.objects.order_by('date').reverse()[:12]
+    projects_list = ProjectsModel.objects.order_by('date').reverse()[:3]
+    notes_list = NotesModel.objects.order_by('date').reverse()[:4]
     context = {
         'works_list': works_list,
         'projects_list': projects_list,
