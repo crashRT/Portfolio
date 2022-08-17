@@ -4,10 +4,11 @@ from django.db import models
 
 CATEGORY = (('3dcg', '3dcg'),
             ('web', 'web'),
+            ('linux', 'linux'),
             ('other', 'other')
             )
 
-tags = ('3dcg', 'web', )
+tags = ('3dcg', 'web', 'Linux')
 
 
 class NotesModel(models.Model):
