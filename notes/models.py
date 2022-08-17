@@ -4,7 +4,7 @@ from django.db import models
 
 CATEGORY = (('3dcg', '3dcg'),
             ('web', 'web'),
-            ('linux', 'linux'),
+            ('Linux', 'Linux'),
             ('other', 'other')
             )
 

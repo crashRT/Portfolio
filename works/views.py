@@ -6,7 +6,7 @@ from .models import WorksModel, tags
 
 
 def worklistview(request):
-    work_list = WorksModel.objects.all()
+    work_list = WorksModel.objects.order_by('date').reverse()
     context = {
         'works_list': work_list,
         'taglist': tags,
@@ -20,7 +20,8 @@ def workdetailview(request, pk):
 
 
 def workstagview(requested, tagname):
-    work_list = WorksModel.objects.filter(tag__in=[tagname]).distinct()
+    work_list = WorksModel.objects.filter(
+        tag__in=[tagname]).distinct().order_by('date').reverse()
     context = {
         'works_list': work_list,
         'taglist': tags,
