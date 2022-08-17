@@ -5,7 +5,7 @@ from .models import ProjectsModel, tags
 
 
 def projectslistview(request):
-    projects_list = ProjectsModel.objects.all()
+    projects_list = ProjectsModel.objects.order_by('date').reverse()
     context = {
         'projects_list': projects_list,
         'taglist': tags
@@ -19,7 +19,8 @@ def projectsdetailview(request, pk):
 
 
 def projectstagview(requested, tagname):
-    projects_list = ProjectsModel.objects.filter(tag__in=[tagname]).distinct()
+    projects_list = ProjectsModel.objects.filter(
+        tag__in=[tagname]).distinct().order_by('date').reverse()
     context = {
         'projects_list': projects_list,
         'taglist': tags,

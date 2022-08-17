@@ -14,7 +14,8 @@ def noteslistview(request):
 
 
 def notestagview(requested, tagname):
-    notes_list = NotesModel.objects.filter(tag__in=[tagname]).distinct()
+    notes_list = NotesModel.objects.filter(
+        tag__in=[tagname]).distinct().order_by('date').reverse()
     context = {
         'notes_list': notes_list,
         'taglist': tags,
