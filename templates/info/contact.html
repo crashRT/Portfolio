@@ -14,12 +14,13 @@
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href="#" class="nav-link">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Works</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">Notes</a></li>
-            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
-            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Contact</a></li>
+            <li class="nav-item"><a href={% url 'top' %} class="nav-link">Home</a></li>
+            <li class="nav-item"><a href={% url 'worklist' %} class="nav-link">Works</a></li>
+            <li class="nav-item"><a href={% url 'projectslist' %} class="nav-link">Projects</a></li>
+            <li class="nav-item"><a href={% url 'noteslist' %} class="nav-link">Notes</a></li>
+            <li class="nav-item"><a href={% url 'about' %} class="nav-link">About</a></li>
+            <li class="nav-item"><a href={% url 'contact' %} class="nav-link active" aria-current="page">Contact</a>
+            </li>
         </ul>
     </header>
 </div>
