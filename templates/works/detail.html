@@ -17,7 +17,9 @@
 
     {% if work.pictureMain %}
     <div class="container-sm my-4">
-        <img width="100%" src="/media/works/{{work.pictureMain}}" alt="{{works.title}}">
+        <a href="/media/works/{{work.pictureMain}}">
+            <img width="100%" src="/media/works/{{work.pictureMain}}" alt="{{works.title}}">
+        </a>
     </div>
     {% endif %}
 
@@ -53,32 +55,44 @@
         <div class="row row-cols-1 row-cols-sm-2 g-3 text-center">
             {% if work.picture1 %}
             <div class="col">
-                <img width="100%" src="/media/works/{{work.picture1}}" alt="">
+                <a href="/media/works/{{work.picture1}}">
+                    <img width="100%" src="/media/works/{{work.picture1}}" alt="">
+                </a>
             </div>
             {% endif %}
             {% if work.picture2 %}
             <div class="col">
-                <img width="100%" src="/media/works/{{work.picture2}}" alt="">
+                <a href="/media/works/{{work.picture2}}">
+                    <img width="100%" src="/media/works/{{work.picture2}}" alt="">
+                </a>
             </div>
             {% endif %}
             {% if work.picture3 %}
             <div class="col">
-                <img width="100%" src="/media/works/{{work.picture3}}" alt="">
+                <a href="/media/works/{{work.picture3}}">
+                    <img width="100%" src="/media/works/{{work.picture3}}" alt="">
+                </a>
             </div>
             {% endif %}
             {% if work.picture4 %}
             <div class="col">
-                <img width="100%" src="/media/works/{{work.picture4}}" alt="">
+                <a href="/media/works/{{work.picture4}}">
+                    <img width="100%" src="/media/works/{{work.picture4}}" alt="">
+                </a>
             </div>
             {% endif %}
             {% if work.picture5 %}
             <div class="col">
-                <img width="100%" src="/media/works/{{work.picture5}}" alt="">
+                <a href="/media/works/{{work.picture5}}">
+                    <img width="100%" src="/media/works/{{work.picture5}}" alt="">
+                </a>
             </div>
             {% endif %}
             {% if work.picture6 %}
             <div class="col">
-                <img width="100%" src="/media/works/{{work.picture6}}" alt="">
+                <a href="/media/works/{{work.picture6}}">
+                    <img width="100%" src="/media/works/{{work.picture6}}" alt="">
+                </a>
             </div>
             {% endif %}
         </div>
