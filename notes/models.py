@@ -3,12 +3,13 @@ from django.db import models
 # Create your models here.
 
 CATEGORY = (('3dcg', '3dcg'),
+            ('AfterEffects', 'AfterEffects'),
             ('web', 'web'),
             ('Linux', 'Linux'),
             ('other', 'other')
             )
 
-tags = ('3dcg', 'web', 'Linux')
+tags = ('After Effects', '3dcg', 'web', 'Linux')
 
 
 class NotesModel(models.Model):
