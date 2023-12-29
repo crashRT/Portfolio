@@ -6,10 +6,11 @@ CATEGORY = (('3dcg', '3dcg'),
             ('AfterEffects', 'AfterEffects'),
             ('web', 'web'),
             ('Linux', 'Linux'),
+            ("network", "network"),
             ('other', 'other')
             )
 
-tags = ('After Effects', '3dcg', 'web', 'Linux')
+tags = ('After Effects', '3dcg', 'web', 'Linux', 'network')
 
 
 class NotesModel(models.Model):

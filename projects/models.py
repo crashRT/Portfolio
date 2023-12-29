@@ -4,10 +4,11 @@ from django.db import models
 
 CATEGORY = (('aescript', 'aescript'),
             ('web', 'web'),
+            ('infra', 'infra'),
             ('other', 'other')
             )
 
-tags = ('web', )
+tags = ('web', 'infra')
 
 
 class ProjectsModel(models.Model):
