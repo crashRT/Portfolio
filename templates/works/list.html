@@ -14,17 +14,17 @@
     <section class="py-5 text-center container">
         <div class="row py-lg-5">
             <div class="col-lg-6 col-md-8 mx-auto">
-                <h1 class="fw-light"> Works</h1>
+                <h1 class="fw-light"> Graphics</h1>
                 <p class="lead text-muted">3DCG や Motion Graphics を用いて制作した作品をまとめています．</p>
             </div>
         </div>
     </section>
 
 
-    <div class="album py-5 bg-light">
+    <div class="album py-5">
         <div class="container mb-5">
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <button class="btn btn-secondary dropdown-toggle neu-shadow" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     CATEGORY
                 </button>
@@ -42,9 +42,10 @@
                 {% for work in works_list%}
                 <div class="col">
                     <a href="/works/detail/{{work.pk}}">
-                        <div class="card shadow-sm">
+                        <div class="card neu-shadow">
 
-                            <img class="cart-body" width="100%" src="../../media/works/thumbnail/{{work.thumbnail}}">
+                            <img class="cart-body card-img" width="100%"
+                                src="../../media/works/thumbnail/{{work.thumbnail}}">
 
                         </div>
                     </a>

@@ -7,44 +7,49 @@
 
 {% block content %}
 
-<div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+<header class="mb-4">
+    <div class="container d-flex flex-wrap justify-content-center py-3 px-5">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <img src="/media/Logo/crashrt_alpha.png" alt="crashRT">
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href={% url 'top' %} class="nav-link active" aria-current="page">Home</a></li>
-            <li class="nav-item"><a href={% url 'worklist' %} class="nav-link">Works</a></li>
-            <li class="nav-item"><a href={% url 'projectslist' %} class="nav-link">Projects</a></li>
-            <li class="nav-item"><a href={% url 'noteslist' %} class="nav-link">Notes</a></li>
-            <li class="nav-item"><a href={% url 'about' %} class="nav-link">About</a></li>
-            <li class="nav-item"><a href={% url 'contact' %} class="nav-link">Contact</a></li>
+            <li class="nav-item"><a href={% url 'top' %} class="nav-link active" aria-current="page">Home</a>
+            </li>
+            <li class="nav-item"><a href={% url 'worklist' %} class="nav-link neu-shadow">Graphics</a></li>
+            <li class="nav-item"><a href={% url 'projectslist' %} class="nav-link neu-shadow">DevProjects</a></li>
+            <li class="nav-item"><a href={% url 'noteslist' %} class="nav-link neu-shadow">Notes</a></li>
+            <li class="nav-item"><a href={% url 'about' %} class="nav-link neu-shadow">About</a></li>
+            <li class="nav-item"><a href={% url 'contact' %} class="nav-link neu-shadow">Contact</a></li>
         </ul>
-    </header>
-</div>
+    </div>
+</header>
 
 <main>
     <section>
         <div class="position-relative overflow-hidden text-center">
             <div class="container mb-3">
+                <img src="/media/Logo/crashRT.jpg" class="top-icon neu-shadow-nohover my-5" alt="crashRT icon"
+                    width="300" height="300" loading="lazy">
+                <img>
                 <h1>crashRT</h1>
-                <p class="lead">Web / Network / Motion Graphics / 3DCG</p>
+                <p class="lead">Network / Web/ 3DCG / MotionGraphics</p>
+
             </div>
         </div>
     </section>
 
     <section>
-        <div class="album py-5 bg-light my-3">
+        <div class="album py-5 my-3">
             <div class="container">
                 <a href="{% url 'worklist' %}" class=" text-reset text-decoration-none ">
-                    <h2 class="text-center">Recent Works</h2>
+                    <h2 class="text-center">Graphics</h2>
                 </a>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     {% for work in works_list%}
                     <div class="col">
                         <a href="/works/detail/{{work.pk}}">
-                            <div class="card shadow-sm">
+                            <div class="card neu-shadow">
 
                                 <img class="cart-body" width="100%" src="/media/works/thumbnail/{{work.thumbnail}}">
 
@@ -62,16 +67,16 @@
         </div>
     </section>
     <section>
-        <div class="album py-5 bg-light my-3">
+        <div class="album py-5 my-3">
             <div class="container">
                 <a href="{% url 'projectslist' %}" class=" text-reset text-decoration-none ">
-                    <h2 class="text-center">Recent Projects</h2>
+                    <h2 class="text-center">DevProjects</h2>
                 </a>
                 <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     {% for project in projects_list %}
                     <div class="col">
                         <a href={% url 'projectsdetail' project.pk %} class="text-reset text-decoration-none">
-                            <div class="card shadow-sm h-100">
+                            <div class="card neu-shadow h-100">
                                 <img class="cart-body" width="100%"
                                     src="../../media/projects/thumbnail/{{project.thumbnail}}">
                                 <div class="card-body">
@@ -92,16 +97,16 @@
         </div>
     </section>
     <section>
-        <div class="album py-5 bg-light my-3">
+        <div class="album py-5 my-3">
             <div class="container">
                 <a href="{% url 'noteslist' %}" class=" text-reset text-decoration-none ">
-                    <h2 class="text-center">Recent Notes</h2>
+                    <h2 class="text-center">Notes</h2>
                 </a>
                 <div class="row row-cols-1 row-cols-sm-2 g-3">
                     {% for note in notes_list %}
                     <div class="col">
                         <a href="{{note.url}}" class="text-reset text-decoration-none">
-                            <div class="card shadow-sm h-100">
+                            <div class="card neu-shadow h-100">
                                 <div class="card-body">
                                     <h3>{{note.title}}</h3>
                                     <p class="card-text">{{note.abstract}}</p>

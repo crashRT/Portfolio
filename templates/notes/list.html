@@ -21,10 +21,10 @@
     </section>
 
 
-    <div class="album py-5 bg-light">
+    <div class="album py-5">
         <div class="container mb-5">
             <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown"
+                <button class="btn btn-secondary dropdown-toggle neu-shadow" type="button" data-bs-toggle="dropdown"
                     aria-expanded="false">
                     CATEGORY
                 </button>
@@ -42,7 +42,7 @@
                 {% for note in notes_list %}
                 <div class="col">
                     <a href="{{note.url}}" class="text-reset text-decoration-none">
-                        <div class="card shadow-sm h-100">
+                        <div class="card neu-shadow h-100">
                             <div class="card-body">
                                 <h3>{{note.title}}</h3>
                                 <p class="card-text">{{note.abstract}}</p>

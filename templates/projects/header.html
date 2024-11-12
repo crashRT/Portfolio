@@ -1,17 +1,17 @@
-<div class="container">
-    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+<header class="mb-4">
+    <div class="container d-flex flex-wrap justify-content-center py-3 px-5">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <img src="/media/Logo/crashrt_alpha.png" alt="crashRT">
         </a>
 
         <ul class="nav nav-pills">
-            <li class="nav-item"><a href={% url 'top' %} class="nav-link">Home</a></li>
-            <li class="nav-item"><a href={% url 'worklist' %} class="nav-link">Works</a></li>
+            <li class="nav-item"><a href={% url 'top' %} class="nav-link neu-shadow">Home</a></li>
+            <li class="nav-item"><a href={% url 'worklist' %} class="nav-link neu-shadow">Graphics</a></li>
             <li class="nav-item"><a href={% url 'projectslist' %} class="nav-link active"
-                    aria-current="page">Projects</a></li>
-            <li class="nav-item"><a href={% url 'noteslist' %} class="nav-link">Notes</a></li>
-            <li class="nav-item"><a href={% url 'about' %} class="nav-link">About</a></li>
-            <li class="nav-item"><a href={% url 'contact' %} class="nav-link">Contact</a></li>
+                    aria-current="page">DevProjects</a></li>
+            <li class="nav-item"><a href={% url 'noteslist' %} class="nav-link neu-shadow">Notes</a></li>
+            <li class="nav-item"><a href={% url 'about' %} class="nav-link neu-shadow">About</a></li>
+            <li class="nav-item"><a href={% url 'contact' %} class="nav-link neu-shadow">Contact</a></li>
         </ul>
-    </header>
-</div>
+    </div>
+</header>
