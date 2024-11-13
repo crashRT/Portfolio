@@ -8,12 +8,15 @@
 {% block content %}
 
 <header class="mb-4">
-    <div class="container d-flex flex-wrap justify-content-center py-3 px-5">
+    <div class="container d-flex flex-wrap justify-content-between py-3 px-5 a-humburger">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <img src="/media/Logo/crashrt_alpha.png" alt="crashRT">
         </a>
+        <input type="checkbox" name="hamburger" id="hamburger"
+            class="c-hamburger-menu__input" /><!-- 追記 idはlabelのforと同じにする -->
+        <label for="hamburger" class="c-hamburger-menu__bg"></label><!-- 追記 ハンバーガーメニュを開いた時の背景 -->
 
-        <ul class="nav nav-pills">
+        <ul class="nav nav-pills c-hamburger-menu__list">
             <li class="nav-item"><a href={% url 'top' %} class="nav-link active" aria-current="page">Home</a>
             </li>
             <li class="nav-item"><a href={% url 'worklist' %} class="nav-link neu-shadow">Graphics</a></li>
@@ -22,6 +25,11 @@
             <li class="nav-item"><a href={% url 'about' %} class="nav-link neu-shadow">About</a></li>
             <li class="nav-item"><a href={% url 'contact' %} class="nav-link neu-shadow">Contact</a></li>
         </ul>
+        <label for="hamburger" class="c-hamburger-menu__button neu-shadow"><!-- 追記 ハンバーガーメニューのボタン -->
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+        </label>
     </div>
 </header>
 
@@ -33,39 +41,12 @@
                     width="300" height="300" loading="lazy">
                 <img>
                 <h1>crashRT</h1>
-                <p class="lead">Network / Web/ 3DCG / MotionGraphics</p>
+                <p class="lead">Network / Web / 3DCG / MotionGraphics</p>
 
             </div>
         </div>
     </section>
 
-    <section>
-        <div class="album py-5 my-3">
-            <div class="container">
-                <a href="{% url 'worklist' %}" class=" text-reset text-decoration-none ">
-                    <h2 class="text-center">Graphics</h2>
-                </a>
-                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    {% for work in works_list%}
-                    <div class="col">
-                        <a href="/works/detail/{{work.pk}}">
-                            <div class="card neu-shadow">
-
-                                <img class="cart-body" width="100%" src="/media/works/thumbnail/{{work.thumbnail}}">
-
-                            </div>
-                        </a>
-                    </div>
-                    {% endfor %}
-                </div>
-                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="{% url 'worklist' %}">
-                        <button class="btn btn-outline-secondary my-3" type="button">more</button>
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
     <section>
         <div class="album py-5 my-3">
             <div class="container">
@@ -90,6 +71,33 @@
                 </div>
                 <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a href="{% url 'projectslist' %}">
+                        <button class="btn btn-outline-secondary my-3" type="button">more</button>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section>
+        <div class="album py-5 my-3">
+            <div class="container">
+                <a href="{% url 'worklist' %}" class=" text-reset text-decoration-none ">
+                    <h2 class="text-center">Graphics</h2>
+                </a>
+                <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                    {% for work in works_list%}
+                    <div class="col">
+                        <a href="/works/detail/{{work.pk}}">
+                            <div class="card neu-shadow">
+
+                                <img class="cart-body" width="100%" src="/media/works/thumbnail/{{work.thumbnail}}">
+
+                            </div>
+                        </a>
+                    </div>
+                    {% endfor %}
+                </div>
+                <div class="d-grid gap-2 d-md-flex justify-content-md-end">
+                    <a href="{% url 'worklist' %}">
                         <button class="btn btn-outline-secondary my-3" type="button">more</button>
                     </a>
                 </div>
