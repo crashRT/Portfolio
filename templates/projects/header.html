@@ -1,10 +1,13 @@
 <header class="mb-4">
-    <div class="container d-flex flex-wrap justify-content-center py-3 px-5">
+    <div class="container d-flex flex-wrap justify-content-between py-3 px-5 a-humburger">
         <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
             <img src="/media/Logo/crashrt_alpha.png" alt="crashRT">
         </a>
+        <input type="checkbox" name="hamburger" id="hamburger"
+            class="c-hamburger-menu__input" /><!-- 追記 idはlabelのforと同じにする -->
+        <label for="hamburger" class="c-hamburger-menu__bg"></label><!-- 追記 ハンバーガーメニュを開いた時の背景 -->
 
-        <ul class="nav nav-pills">
+        <ul class="nav nav-pills c-hamburger-menu__list">
             <li class="nav-item"><a href={% url 'top' %} class="nav-link neu-shadow">Home</a></li>
             <li class="nav-item"><a href={% url 'worklist' %} class="nav-link neu-shadow">Graphics</a></li>
             <li class="nav-item"><a href={% url 'projectslist' %} class="nav-link active"
@@ -13,5 +16,10 @@
             <li class="nav-item"><a href={% url 'about' %} class="nav-link neu-shadow">About</a></li>
             <li class="nav-item"><a href={% url 'contact' %} class="nav-link neu-shadow">Contact</a></li>
         </ul>
+        <label for="hamburger" class="c-hamburger-menu__button neu-shadow"><!-- 追記 ハンバーガーメニューのボタン -->
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+            <span class="c-hamburger-menu__button-mark"></span>
+        </label>
     </div>
 </header>
