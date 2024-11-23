@@ -142,6 +142,7 @@ html {
   scroll-behavior: smooth;
   -ms-overflow-style: none;
   scrollbar-width: none;
+  overflow-x: hidden;
 }
 
 html::-webkit-scrollbar {
@@ -202,7 +203,7 @@ header {
     left: 0;
     padding: 2rem; /* カスタマイズしてください */
     position: absolute;
-    transform: translateX(100%);
+    transform: translateX(100%) scale(0, 1);
     transition: 0s; /* カスタマイズしてください */
     top: 100%;
     width: 100%;
