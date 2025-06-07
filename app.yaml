@@ -1,5 +1,5 @@
 #インストールされているバージョンによって末尾の数字調整
-runtime: python39
+runtime: python310
 
 # 下記は 設定用ディレクトリ.wsgi:application のように記述
 entrypoint: gunicorn -b :$PORT portfolio.wsgi:application
