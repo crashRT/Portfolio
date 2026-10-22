@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import WorksModel, tags
 
 
@@ -15,7 +15,7 @@ def worklistview(request):
 
 
 def workdetailview(request, pk):
-    work = WorksModel.objects.get(pk=pk)
+    work = get_object_or_404(WorksModel, pk=pk)
     return render(request, 'works/detail.html', {'work': work})
 
 
