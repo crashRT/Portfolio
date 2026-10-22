@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import get_object_or_404, render
 from .models import ProjectsModel, tags
 
 # Create your views here.
@@ -14,7 +14,7 @@ def projectslistview(request):
 
 
 def projectsdetailview(request, pk):
-    project = ProjectsModel.objects.get(pk=pk)
+    project = get_object_or_404(ProjectsModel, pk=pk)
     return render(request, 'projects/detail.html', {'project': project})
 
 
